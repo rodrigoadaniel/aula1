@@ -1,0 +1,23 @@
+{
+  "name": "lambda-hello-world",
+  "version": "1.0.0",
+  "description": "AWS Lambda function with hello world endpoint",
+  "main": "src/handler.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "invoke": "serverless invoke -f hello",
+    "start": "serverless offline",
+    "dev": "serverless offline"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "serverless"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.0"
+  }
+}

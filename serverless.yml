@@ -1,0 +1,31 @@
+service: lambda-hello-world
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: dev
+
+custom:
+  serverless-offline:
+    httpPort: 3000
+    host: localhost
+
+functions:
+  hello:
+    handler: src/handler.hello
+    events:
+      - http:
+          path: cep/{cep}
+          method: GET
+          cors: true
+  buscacep:
+    handler: src/handler.buscacep
+    events:
+      - http:
+          path: buscacep
+          method: POST
+          cors: true   
